@@ -2,6 +2,8 @@ package com.customMoveis.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.util.ArrayList;
+
 import javax.persistence.*;
 
 @Entity
@@ -18,7 +20,11 @@ public class Lojista {
 	private String password;
 	@Column
     private String email;
-	
+	//@ManyToMany(fetch = FetchType.LAZY, cascade=CascadeType.MERGE)
+//	@JoinTable(name = "moveis", joinColumns = @JoinColumn(name = "id"))
+	@Column
+	private ArrayList<String> moveis = new ArrayList<>();
+
 	public String getUsername() {
 		return username;
 	}
@@ -41,6 +47,15 @@ public class Lojista {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	
+	public ArrayList<String> getMoveis() {
+		return this.moveis;
+	}
+
+	public void setMoveis(ArrayList<String> moveis) {
+		this.moveis = moveis;
 	}
 	
 
