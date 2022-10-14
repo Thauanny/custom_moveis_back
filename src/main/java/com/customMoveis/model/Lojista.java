@@ -2,28 +2,33 @@ package com.customMoveis.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-import java.util.ArrayList;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 import javax.persistence.*;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "lojista")
 public class Lojista {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	@Column
+	private long lojista_id;
+
 	private String username;
-	@Column
+
 	@JsonIgnore
 	private String password;
-	@Column
+
     private String email;
-	//@ManyToMany(fetch = FetchType.LAZY, cascade=CascadeType.MERGE)
-//	@JoinTable(name = "moveis", joinColumns = @JoinColumn(name = "id"))
-	@Column
-	private ArrayList<String> moveis = new ArrayList<>();
+	
+	@OneToMany(targetEntity = Movel.class, cascade = CascadeType.ALL)
+	@JoinColumn(name = "lojista_movel_fk", referencedColumnName = "lojista_id")
+	private List<Movel> moveis;
 
 	public String getUsername() {
 		return username;
@@ -50,11 +55,11 @@ public class Lojista {
 	}
 
 	
-	public ArrayList<String> getMoveis() {
+	public List<Movel>  getMoveis() {
 		return this.moveis;
 	}
 
-	public void setMoveis(ArrayList<String> moveis) {
+	public void setMoveis(List<Movel>  moveis) {
 		this.moveis = moveis;
 	}
 	

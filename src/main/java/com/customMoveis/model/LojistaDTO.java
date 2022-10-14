@@ -1,11 +1,12 @@
 package com.customMoveis.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class LojistaDTO {
 	private String username;
 	private String password;
-    private List<String> moveis;
+    private List<Movel> moveis;
     private String email;
 
 	public String getUsername() {
@@ -32,11 +33,11 @@ public class LojistaDTO {
 		this.email = email;
 	}
 
-	public List<String> getMoveis() {
+	public List<Movel> getMoveis() {
 		return moveis;
 	}
 
-	public void setMoveis(List<String> moveis) {
+	public void setMoveis(List<Movel> moveis) {
 		this.moveis = moveis;
 	}
 }
