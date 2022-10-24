@@ -3,7 +3,6 @@ package com.customMoveis.service;
 import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -11,7 +10,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.customMoveis.model.Lojista;
-import com.customMoveis.model.LojistaDTO;
+import com.customMoveis.model.dto.LojistaDTO;
 import com.customMoveis.repository.lojistaRepository;
 
 @Service

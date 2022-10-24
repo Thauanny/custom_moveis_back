@@ -1,5 +1,6 @@
 package com.customMoveis.model;
 
+import com.customMoveis.model.movel.Movel;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -26,9 +27,9 @@ public class Lojista {
 
     private String email;
 	
-	@OneToMany(targetEntity = Movel.class, cascade = CascadeType.ALL)
-	@JoinColumn(name = "lojista_movel_fk", referencedColumnName = "lojista_id")
+	@OneToMany(mappedBy = "lojista", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 	private List<Movel> moveis;
+	
 
 	public String getUsername() {
 		return username;

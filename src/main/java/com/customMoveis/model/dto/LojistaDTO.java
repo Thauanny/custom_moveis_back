@@ -1,7 +1,6 @@
-package com.customMoveis.model;
-
-import java.util.ArrayList;
+package com.customMoveis.model.dto;
 import java.util.List;
+import com.customMoveis.model.movel.Movel;
 
 public class LojistaDTO {
 	private String username;
@@ -40,4 +39,6 @@ public class LojistaDTO {
 	public void setMoveis(List<Movel> moveis) {
 		this.moveis = moveis;
 	}
+
+
 }
