@@ -20,19 +20,25 @@ import com.customMoveis.model.Material;
 public class Movel {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long movel_id;
+	private Integer movel_id;
 	private String name;
 	private double valor;
 	private double tamanho;
 	private double largura;
-	@ManyToOne(cascade=CascadeType.PERSIST)
+	@ManyToOne(cascade=CascadeType.MERGE)
 	@JoinColumn(name = "lojista_id", referencedColumnName = "lojista_id",  foreignKey = @ForeignKey(name = "fk_lojista_id") )
 	private Lojista lojista;
+
 
 	@OneToOne(cascade=CascadeType.PERSIST)
 	@JoinColumn(name = "material_id", referencedColumnName = "material_id", foreignKey = @ForeignKey(name = "fk_material_id"))
 	private Material material;
 	
+
+	
+	public Lojista getLojista() {
+		return lojista;
+	}
 
     public String getName() {
 		return name;

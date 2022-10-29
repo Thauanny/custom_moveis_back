@@ -18,7 +18,11 @@ public class Lojista {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long lojista_id;
+	private Integer lojista_id;
+
+
+
+
 
 	private String username;
 
@@ -30,7 +34,9 @@ public class Lojista {
 	@OneToMany(mappedBy = "lojista", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
 	private List<Movel> moveis;
 	
-
+	public Integer getLojista_id() {
+		return lojista_id;
+	}
 	public String getUsername() {
 		return username;
 	}

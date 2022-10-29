@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.customMoveis.config.JwtTokenUtil;
 import com.customMoveis.model.JwtRequest;
 import com.customMoveis.model.JwtResponse;
+import com.customMoveis.model.Lojista;
 import com.customMoveis.model.dto.LojistaDTO;
 import com.customMoveis.service.JwtUserDetailsService;
 
@@ -47,7 +48,8 @@ public class JwtAuthenticationController {
 	
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	public ResponseEntity<?> saveUser(@RequestBody LojistaDTO user) throws Exception {
-		return ResponseEntity.ok(userDetailsService.save(user));
+		Lojista a = userDetailsService.save(user);
+		return ResponseEntity.ok(a);
 	}
 
 	private void authenticate(String username, String password) throws Exception {

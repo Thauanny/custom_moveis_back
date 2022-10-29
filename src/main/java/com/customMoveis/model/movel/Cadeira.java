@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "cadeira")
 public class Cadeira  extends Movel{
-    private int quantidadePernas;
+    private Integer quantidadePernas;
     
 
     public int getQuantidadePernas() {

@@ -3,10 +3,16 @@ import java.util.List;
 import com.customMoveis.model.movel.Movel;
 
 public class LojistaDTO {
+	private Integer lojista_id;
 	private String username;
 	private String password;
     private List<Movel> moveis;
     private String email;
+
+	public long getLojista_id() {
+		return lojista_id;
+	}
+
 
 	public String getUsername() {
 		return username;
