@@ -9,10 +9,20 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Table(name = "cadeira")
 public class Cadeira  extends Movel{
-    private Integer quantidadePernas;
-    
 
-    public int getQuantidadePernas() {
+    private Integer quantidadePernas;
+	private boolean possuiAcolchoado;
+
+
+    public boolean isPossuiAcolchoado() {
+		return possuiAcolchoado;
+	}
+
+	public void setPossuiAcolchoado(boolean possuiAcolchoado) {
+		this.possuiAcolchoado = possuiAcolchoado;
+	}
+
+	public int getQuantidadePernas() {
 		return this.quantidadePernas;
 	}
 
