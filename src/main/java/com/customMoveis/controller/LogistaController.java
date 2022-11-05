@@ -6,7 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import com.customMoveis.model.Lojista;
+
+import com.customMoveis.model.lojista.Lojista;
 import com.customMoveis.service.LojistaService;
 import org.springframework.web.bind.annotation.RequestMapping;
 

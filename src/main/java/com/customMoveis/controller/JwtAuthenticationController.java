@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.customMoveis.config.JwtTokenUtil;
-import com.customMoveis.model.JwtRequest;
-import com.customMoveis.model.JwtResponse;
-import com.customMoveis.model.Lojista;
 import com.customMoveis.model.dto.LojistaDTO;
+import com.customMoveis.model.jwt.JwtRequest;
+import com.customMoveis.model.jwt.JwtResponse;
+import com.customMoveis.model.lojista.Lojista;
 import com.customMoveis.service.JwtUserDetailsService;
 
 @RestController

@@ -1,4 +1,4 @@
-package com.customMoveis.model;
+package com.customMoveis.model.jwt;
 
 import java.io.Serializable;
 

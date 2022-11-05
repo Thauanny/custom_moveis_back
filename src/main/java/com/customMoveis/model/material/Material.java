@@ -1,4 +1,4 @@
-package com.customMoveis.model;
+package com.customMoveis.model.material;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;

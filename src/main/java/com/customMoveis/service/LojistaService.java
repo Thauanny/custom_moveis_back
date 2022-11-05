@@ -4,7 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.customMoveis.model.Lojista;
+
+import com.customMoveis.model.lojista.Lojista;
 import com.customMoveis.repository.lojistaRepository;
 
 @Service

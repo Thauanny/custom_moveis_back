@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.customMoveis.model.Lojista;
 import com.customMoveis.model.dto.LojistaDTO;
+import com.customMoveis.model.lojista.Lojista;
 import com.customMoveis.repository.lojistaRepository;
 
 @Service

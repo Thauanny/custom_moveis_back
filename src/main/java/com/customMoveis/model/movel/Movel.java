@@ -11,8 +11,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import com.customMoveis.model.Lojista;
-import com.customMoveis.model.Material;
+
+import com.customMoveis.model.lojista.Lojista;
+import com.customMoveis.model.material.Material;
 
 import lombok.Getter;
 import lombok.Setter;
