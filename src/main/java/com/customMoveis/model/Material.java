@@ -11,11 +11,15 @@ import javax.persistence.Table;
 import com.customMoveis.model.movel.enums.MATERIAIS;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "material")
 public class Material {
 
@@ -26,34 +30,5 @@ public class Material {
 	private MATERIAIS name;
 	private double valor;
 
-	public MATERIAIS getName() {
-		return name;
-	}
-
-	public void setName(MATERIAIS name) {
-		this.name = name;
-	}
-
-	public double getValor() {
-		switch (this.name) {
-			case MADEIRA:
-
-				return 1.0;
-			case MADEIRACOMVIDRO:
-
-				return 3.5;
-			case FERRO:
-
-				return 4.0;
-
-			default:
-				return 0.0;
-		}
-
-	}
-
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
 
 }

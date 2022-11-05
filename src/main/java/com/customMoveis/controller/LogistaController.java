@@ -1,37 +1,31 @@
 package com.customMoveis.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import com.customMoveis.model.Lojista;
-import com.customMoveis.model.movel.Movel;
 import com.customMoveis.service.LojistaService;
-import com.customMoveis.service.MovelService;
-
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
+import org.springframework.web.bind.annotation.RequestMapping;
 
 @RestController
+@RequestMapping(value = "/lojista")
 public class LogistaController {
 
     @Autowired
-	private LojistaService lojistaService;
-    @Autowired
-	private MovelService movelService;
+    private LojistaService lojistaService;
 
-    @GetMapping("/lojista/{id}")
-    public Lojista lojista(@PathVariable Integer id){
-        return lojistaService.lojista(id);
+
+    @GetMapping("/{id}")
+    public ResponseEntity<?> lojista(@PathVariable Integer id) {
+        return ResponseEntity.ok(lojistaService.lojista(id));
     }
 
-    @PostMapping("/moveis")
-    public Movel cadastrarMoveis(@RequestBody Movel movel) {
-        return movelService.cadastrarMoveis(movel);
+    @GetMapping("/all")
+    public List<Lojista> lojistas() {
+        return lojistaService.lojistas();
     }
-    
-    
+
 }

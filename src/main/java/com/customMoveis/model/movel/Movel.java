@@ -14,9 +14,14 @@ import javax.persistence.Table;
 import com.customMoveis.model.Lojista;
 import com.customMoveis.model.Material;
 
+import lombok.Getter;
+import lombok.Setter;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "movel")
+@Getter
+@Setter
 public class Movel {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,48 +39,4 @@ public class Movel {
 	@JoinColumn(name = "material_id", referencedColumnName = "material_id", foreignKey = @ForeignKey(name = "fk_material_id"))
 	private Material material;
 	
-
-	
-	public Lojista getLojista() {
-		return lojista;
-	}
-
-    public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-    public double getValor() {
-		return valor;
-	}
-
-	public void setValor(double valor) {
-		this.valor = valor;
-	}
-
-	public Material getMaterial() {
-		return material;
-	}
-
-	public void setMaterial(Material material) {
-		this.material = material;
-	}
-
-	public double getTamanho() {
-		return tamanho;
-	}
-
-	public void setTamanho(double tamanho) {
-		this.tamanho = tamanho;
-	}
-	public double getLargura() {
-		return largura;
-	}
-
-	public void setLargura(double largura) {
-		this.largura = largura;
-	}
 }

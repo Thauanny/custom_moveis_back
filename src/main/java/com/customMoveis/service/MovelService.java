@@ -1,5 +1,7 @@
 package com.customMoveis.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,17 @@ public class MovelService {
 
    public Movel cadastrarMoveis(Movel movel){
     return movelRepository.save(movel);
+   }
+
+   public List<Movel> moveisFindAll(){
+    return movelRepository.findAll();
+   }
+
+   public Movel movel(Integer id){
+    return movelRepository.findById(id).get();
+   }
+   public List<Movel> moveisFindAllByLogistaId(Integer id){
+    return movelRepository.findAllByLogistaId(id);
    }
    
 }
