@@ -1,6 +1,8 @@
 package com.customMoveis.model.movel;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,6 +16,7 @@ import javax.persistence.Table;
 
 import com.customMoveis.model.lojista.Lojista;
 import com.customMoveis.model.material.Material;
+import com.customMoveis.model.movel.enums.MOVEIS;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -27,7 +30,8 @@ public class Movel {
     @Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer movel_id;
-	private String name;
+	@Enumerated(EnumType.STRING)
+	private MOVEIS name;
 	private double valor;
 	private double tamanho;
 	private double largura;
