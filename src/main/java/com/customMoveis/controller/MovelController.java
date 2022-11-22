@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.customMoveis.model.material.Material;
 import com.customMoveis.model.movel.Cadeira;
 import com.customMoveis.model.movel.Escrivaninha;
 import com.customMoveis.model.movel.GuardaRoupa;
@@ -91,11 +89,6 @@ public class MovelController {
     public GuardaRoupasComEspelho AtualizarMoveis(@RequestBody GuardaRoupasComEspelho movel) {
 
         return movelService.cadastrarGuardaRoupasComEspelho(movel);
-    }
-
-    @PostMapping("/register/material")
-    public Material cadastrarMateriais(@RequestBody Material material) {
-        return movelService.cadastrarMaterial(material);
     }
 
     @GetMapping("/{id}")
