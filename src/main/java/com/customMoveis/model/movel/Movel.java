@@ -40,7 +40,7 @@ public class Movel {
 	private Lojista lojista;
 
 
-	@OneToOne(cascade=CascadeType.PERSIST)
+	@OneToOne(cascade=CascadeType.MERGE)
 	@JoinColumn(name = "material_id", referencedColumnName = "material_id", foreignKey = @ForeignKey(name = "fk_material_id"))
 	private Material material;
 	
