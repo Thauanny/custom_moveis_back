@@ -2,6 +2,8 @@ package com.customMoveis.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,88 +28,192 @@ public class MovelController {
     private MovelService movelService;
 
     @PostMapping("/register/cadeira")
-    public Cadeira cadastrarMoveis(@RequestBody Cadeira movel) {
-        return movelService.cadastrarCadeira(movel);
+    public ResponseEntity<?> cadastrarMoveis(@RequestBody Cadeira movel) {
+
+        try {
+            Cadeira resMovel = movelService.cadastrarCadeira(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
+
     }
 
     @PutMapping("/register/cadeira}")
-    public Cadeira AtualizarMoveis(@RequestBody Cadeira movel) {
+    public ResponseEntity<?> AtualizarMoveis(@RequestBody Cadeira movel) {
 
-        return movelService.cadastrarCadeira(movel);
+        try {
+            Cadeira resMovel = movelService.cadastrarCadeira(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar material antes\"}");
+        }
+
     }
 
     @PostMapping("/register/mesa")
-    public Mesa cadastrarMoveis(@RequestBody Mesa movel) {
-        return movelService.cadastrarMesa(movel);
+    public ResponseEntity<?> cadastrarMoveis(@RequestBody Mesa movel) {
+
+        try {
+            Mesa resMovel = movelService.cadastrarMesa(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
+
     }
 
     @PutMapping("/register/mesa")
-    public Mesa AtualizarMoveis(@RequestBody Mesa movel) {
+    public ResponseEntity<?> AtualizarMoveis(@RequestBody Mesa movel) {
+        try {
+            Mesa resMovel = movelService.cadastrarMesa(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
 
-        return movelService.cadastrarMesa(movel);
     }
 
     @PostMapping("/register/escrivaninha")
-    public Escrivaninha cadastrarMoveis(@RequestBody Escrivaninha movel) {
-        return movelService.cadastrarEscrivaninha(movel);
+    public ResponseEntity<?> cadastrarMoveis(@RequestBody Escrivaninha movel) {
+        try {
+            Escrivaninha resMovel = movelService.cadastrarEscrivaninha(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
+
     }
 
     @PutMapping("/register/escrivaninha")
-    public Escrivaninha AtualizarMoveis(@RequestBody Escrivaninha movel) {
+    public ResponseEntity<?> AtualizarMoveis(@RequestBody Escrivaninha movel) {
 
-        return movelService.cadastrarEscrivaninha(movel);
+        try {
+            Escrivaninha resMovel = movelService.cadastrarEscrivaninha(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
+
     }
 
     @PostMapping("/register/sofa")
-    public Sofa cadastrarMoveis(@RequestBody Sofa movel) {
-        return movelService.cadastrarSofa(movel);
+    public ResponseEntity<?> cadastrarMoveis(@RequestBody Sofa movel) {
+
+        try {
+            Sofa resMovel = movelService.cadastrarSofa(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
+
     }
 
     @PutMapping("/register/sofa")
-    public Sofa AtualizarMoveis(@RequestBody Sofa movel) {
+    public ResponseEntity<?> AtualizarMoveis(@RequestBody Sofa movel) {
+        try {
+            Sofa resMovel = movelService.cadastrarSofa(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
 
-        return movelService.cadastrarSofa(movel);
     }
 
     @PostMapping("/register/guardaRoupa")
-    public GuardaRoupa cadastrarMoveis(@RequestBody GuardaRoupa movel) {
-        return movelService.cadastrarGuardaRoupa(movel);
+    public ResponseEntity<?> cadastrarMoveis(@RequestBody GuardaRoupa movel) {
+        try {
+            GuardaRoupa resMovel = movelService.cadastrarGuardaRoupa(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
+
     }
 
     @PutMapping("/register/guardaRoupa")
-    public GuardaRoupa AtualizarMoveis(@RequestBody GuardaRoupa movel) {
+    public ResponseEntity<?> AtualizarMoveis(@RequestBody GuardaRoupa movel) {
 
-        return movelService.cadastrarGuardaRoupa(movel);
+        try {
+            GuardaRoupa resMovel = movelService.cadastrarGuardaRoupa(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
+
     }
 
     @PostMapping("/register/guardaRoupaEspelhado")
-    public GuardaRoupasComEspelho cadastrarMoveis(@RequestBody GuardaRoupasComEspelho movel) {
-        return movelService.cadastrarGuardaRoupasComEspelho(movel);
+    public ResponseEntity<?> cadastrarMoveis(@RequestBody GuardaRoupasComEspelho movel) {
+
+        try {
+            GuardaRoupasComEspelho resMovel = movelService.cadastrarGuardaRoupasComEspelho(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
+
     }
 
     @PutMapping("/register/guardaRoupaEspelhado")
-    public GuardaRoupasComEspelho AtualizarMoveis(@RequestBody GuardaRoupasComEspelho movel) {
+    public ResponseEntity<?> AtualizarMoveis(@RequestBody GuardaRoupasComEspelho movel) {
 
-        return movelService.cadastrarGuardaRoupasComEspelho(movel);
+        try {
+            GuardaRoupasComEspelho resMovel = movelService.cadastrarGuardaRoupasComEspelho(movel);
+            return ResponseEntity.ok(resMovel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("{\"message\": \"Necessario cadastrar lojista ou material antes\"}");
+        }
     }
 
     @GetMapping("/{id}")
-    public Movel movel(@PathVariable Integer id) {
-        return movelService.movel(id);
+    public ResponseEntity<?> movel(@PathVariable Integer id) {
+
+        try {
+            Movel movel = movelService.movel(id);
+            return ResponseEntity.ok(movel);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{\"message\": \"Nao encontrado\"}");
+        }
+
     }
 
     @GetMapping("/all")
-    public List<Movel> moveisFindAll() {
-        return movelService.moveisFindAll();
+    public ResponseEntity<?> moveisFindAll() {
+        List<Movel> movel = movelService.moveisFindAll();
+        if (!(movel.isEmpty())) {
+            return ResponseEntity.ok(movel);
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("{\"message\": \"Nao existem moveis registrados\"}");
+        }
+
     }
 
-    @GetMapping("/valor/{id")
-    public double valor(@PathVariable Integer id) {
+    @GetMapping("/valor/{id}")
+    public ResponseEntity<?> valor(@PathVariable Integer id) {
 
-        Movel movel = movelService.movel(id);
-        double valor = movel.getValor() + movel.getMaterial().getValor();
+        try {
+            Movel movel = movelService.movel(id);
+            double valor = movel.getValor() + movel.getMaterial().getValor();
+            return ResponseEntity.ok("{\"body\": " + valor + "}");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("{\"message\": \"Movel nao encontrado\"}");
+        }
 
-        return valor;
     }
 
 }
